@@ -32,8 +32,10 @@ def encode data
     :country_name => data.country_name,
     # The two-character continent code
     :continent => data.continent_code,
+    # The region code
+    :region_code => data.region_name,
     # The region name
-    :region_name => data.region_name,
+    :region_name => data.real_region_name,
     # The city name
     :city => data.city_name,
     # The postal code
