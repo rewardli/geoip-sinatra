@@ -2,3 +2,23 @@ geoip-sinatra
 =============
 
 A simple Sinatra-based geoip server.
+
+## How to deploy to Heroku
+
+  git remote add heroku git@heroku.com:perkhub-geoip.git
+  git push heroku master
+
+## How to update the database
+
+  rake geoip:update
+
+Commit and push to Heroku.
+
+## Basic Authentication
+
+Set a username and password with the environment variables AUTH_USERNAME and AUTH_PASSWORD.
+
+
+## Acknowledgements
+
+Part of the code was copied and distilled from https://github.com/JackDanger/geoip_server
