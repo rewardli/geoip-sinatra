@@ -1,7 +1,11 @@
 geoip-sinatra
 =============
 
-A simple Sinatra-based geoip server. It uses the free Maxmind geolite city database with the geoip ruby gem. The database is updated about once a month.
+A simple Sinatra-based geoip server. It uses the free Maxmind geolite city database with the geoip ruby gem. The database is updated about once a month. The service runs here:
+
+  * https://geoip.perkhub.com/json/
+  * https://geoip.perkhub.com/json/123.123.123.123
+
 
 ## How to deploy to Heroku
 
