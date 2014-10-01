@@ -24,7 +24,7 @@ end
 
 def request_response(data)
   content_type 'application/json;charset=ascii-8bit'
-  headers['Cache-Control'] = "public; max-age=86400" # = 24 (hours) * 60 (minutes) * 60 (seconds)
+  headers['Cache-Control'] = "no-cache"
   headers['Access-Control-Allow-Origin'] = '*'
   return "{}" unless data
   MultiJson.encode(encode(data))
