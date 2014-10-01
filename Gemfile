@@ -3,7 +3,8 @@ source 'https://rubygems.org'
 gem "sinatra"
 gem "geoip"
 gem "multi_json"
-gem "passenger"
+gem "unicorn"
+gem "newrelic_rpm"
 
 group :development, :test do
   gem "rake"
