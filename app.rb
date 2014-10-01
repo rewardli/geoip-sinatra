@@ -12,10 +12,20 @@ configure :production do
   end
 end
 
+get '/json/' do
+  data = GeoIP.new(data_file).city(request.ip)
+  request_response(data)
+end
+
 get /\/json\/(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})$/ do |ip|
   data = GeoIP.new(data_file).city(ip)
+  request_response(data)
+end
+
+def request_response(data)
   content_type 'application/json;charset=ascii-8bit'
   headers['Cache-Control'] = "public; max-age=86400" # = 24 (hours) * 60 (minutes) * 60 (seconds)
+  headers['Access-Control-Allow-Origin'] = '*'
   return "{}" unless data
   MultiJson.encode(encode(data))
 end
