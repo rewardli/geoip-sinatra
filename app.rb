@@ -5,6 +5,8 @@ require 'multi_json'
 data_file = File.expand_path(File.join(File.dirname(__FILE__), 'data', 'GeoLiteCity.dat'))
 
 configure :production do
+  require 'newrelic_rpm'
+
   if ENV['AUTH_USERNAME']
     use Rack::Auth::Basic, "Restricted Area" do |username, password|
       username == ENV['AUTH_USERNAME'] && password == ENV['AUTH_PASSWORD']
