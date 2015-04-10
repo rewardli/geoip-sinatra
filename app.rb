@@ -2,6 +2,8 @@ require 'sinatra'
 require 'geoip'
 require 'multi_json'
 
+set :protection, :except => [:json_csrf]
+
 data_file = File.expand_path(File.join(File.dirname(__FILE__), 'data', 'GeoLiteCity.dat'))
 
 configure :production do
